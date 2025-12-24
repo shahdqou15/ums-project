@@ -23,6 +23,6 @@ displayUsers();
 
 
 const deleteUser = async(id)=>{
-        const response = await axios.delete(`http://ums12.runasp.net/api/users/${id}`);
+        const response = await axios.delete(`https://ums12.runasp.net/api/users/${id}`);
         console.log(response);
 }
