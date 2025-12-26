@@ -3,9 +3,9 @@ const getUsers = async()=>{
     return response.data;
 }
 
-
 const displayUsers = async()=>{
-    const result = await getUsers();
+    try{
+        const result = await getUsers();
     const users = result.users.map( (user)=>{
         return`
         <tr>
@@ -18,8 +18,13 @@ const displayUsers = async()=>{
         `
     }).join(' ');
    document.querySelector(".users .tbody").innerHTML = users;
+    }catch(error){
+        document.querySelector(".errorClass").classList.remove("d-none");
+    }
+    
 }
 displayUsers();
+
 
 
 const deleteUser = async(id)=>{
