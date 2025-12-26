@@ -1,6 +1,16 @@
 
 const createUserForm = document.forms['userForm'];
 
+createUserForm.image.addEventListener("change",()=>{
+    const file = createUserForm.image.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
+        document.querySelector(".perview").setAttribute("src",e.target.result);
+        console.log("test");
+    }
+})
+
 
 createUserForm.addEventListener("submit",async(e)=>{
     e.preventDefault();
