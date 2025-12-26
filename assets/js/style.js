@@ -20,6 +20,9 @@ const displayUsers = async()=>{
    document.querySelector(".users .tbody").innerHTML = users;
     }catch(error){
         document.querySelector(".errorClass").classList.remove("d-none");
+        
+    }finally{
+        document.querySelector(".loader").classList.add('d-none');
     }
     
 }
