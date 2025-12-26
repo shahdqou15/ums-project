@@ -10,9 +10,9 @@ const displayUsers = async()=>{
         return`
         <tr>
         <td>${user.name}</td>
-        <td>${user.email}</td>
-        <td>${user.age}</td>
+        
         <td><img src="${user.imageURL}"/></td>
+        <td><a href="./details.html?userId=${user.id}" class="btn btn-outline-primary">Details</a></td>
         <td><button class="btn btn-outline-danger" onclick="deleteUser(${user.id})">Delete</button>
         </tr>
         `

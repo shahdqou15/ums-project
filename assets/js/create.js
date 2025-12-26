@@ -1,5 +1,7 @@
 
 const createUserForm = document.forms['userForm'];
+
+
 createUserForm.addEventListener("submit",async(e)=>{
     e.preventDefault();
 
@@ -7,6 +9,9 @@ createUserForm.addEventListener("submit",async(e)=>{
 
     const response = await axios.post(`https://ums12.runasp.net/api/users`,formData);
 
+    if(response.status == 200){
+        location.href='./index.html';
+    }
     console.log(response);
 })
 
